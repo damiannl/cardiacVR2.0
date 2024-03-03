@@ -1,0 +1,39 @@
+{
+    "title": "cARdiac VR LTI",
+    "description": "cARdiac VR LTI Integration.",
+    "oidc_initiation_url": "https://cardiac-4d807.web.app/",
+    "target_link_uri": "https://cardiac-4d807.web.app/sucess",
+	"extensions": [
+    {
+      "domain": "https://cardiac-4d807.web.app",
+      "tool_id": "cardiac-vr-app",
+      "platform": "https://grouplearn.opencanvaslms.org",
+      "privacy_level": "public",
+      "settings": {
+        "text": "Launch this page in VR to connect to our program.",
+        "icon_url": "https://cardiac-4d807.web.app/logo.jpg",
+        "selection_height": 800,
+        "selection_width": 800,
+        "placements": [
+          {
+            "text": "Course Navigation Placement",
+            "icon_url": "https://cardiac-4d807.web.app/logo.jpg",
+            "placement": "course_navigation",
+            "message_type": "LtiResourceLinkRequest",
+            "target_link_uri": "https://cardiac-4d807.web.app/sucess",
+            "selection_height": 800,
+            "selection_width": 800
+          }
+        ]
+      }
+    }
+  ],
+    "public_jwk": {
+        "kty": "RSA",
+        "e": "AQAB",
+        "use": "sig",
+        "kid": "ktlymOpOrExJe2fXL3uftiG8KNZcuJxdcDXs7O8wPAI",
+        "alg": "RS256",
+        "n": "n_twTDtrpmVtfqJe-6besroYO8wtcqZ_h543_HxXXW7L1lBFP-bUMEifJyX1Lm4QRHIu2AoXBZz6y9mK7OyZeSkR31gqBdeYu-DpU6q97bdELdTCJcnl4Vc7bXmlKT6wSnIqxskTxBsL4e3xvAEvySC_hILVYBhBmv10O7zkX-J2UufXybRiOd7547aOuHuKHOdWaWSJLTwrf62nqZ-GtdhUGfw--vcwl2iYUCm1nPM7DcaQfQ3ucyooQr50PGNLB1Nig03iBosEQkba_WewZWZqsYuUhw7sOlnBo4oUmtHglMGvcDodMF6zKSYq_BJrOEKWe2Xl4_0CHj0ebFud6w"
+    }
+}
