@@ -7,9 +7,6 @@
     <title>Connecting to cARdiac VR Services</title>
     <!-- get styling for index html -->
     <link href="index.css" rel="stylesheet" type="text/css">
-    <!-- this js will make the initial call for OAuth -->
-    <!-- <script src="index.js"></script> -->
-
     <!-- update the version number as needed -->
     <script defer src="/__/firebase/10.8.0/firebase-app-compat.js"></script>
     <!-- include only the Firebase features as you need -->
@@ -27,7 +24,7 @@
       body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
       #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
       #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
+      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 12; text-align: center; }
       #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
       #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
       #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
@@ -36,11 +33,13 @@
         body, #message { margin-top: 0; background: white; box-shadow: none; }
         body { border-top: 16px solid #ffa100; }
       }
-    </style>
+      #message img {width: 128px; height: 128px; object-fit: contain; display: block; margin-left: auto; margin-right: auto; width: 50%; }
+      </style>
   </head>
   <body>
     <div id="message">
-      <h1>Firebase Hosting Setup Complete</h1>
+      <h1>Linking to cARdiac VR Services...</h1>
+      <img src="logo.jpg" alt="" />
       <div class="loader"></div>
       <p id="load">Firebase SDK Loading...</p>
 
@@ -82,72 +81,6 @@
         }
       });
     </script>
-    <script type="module">
-
-      // Import the functions you need from the SDKs you need
-    
-      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
-    
-      // TODO: Add SDKs for Firebase products that you want to use
-    
-      // https://firebase.google.com/docs/web/setup#available-libraries
-    
-    
-      // Your web app's Firebase configuration
-    
-      const firebaseConfig = {
-    
-        apiKey: "AIzaSyDYX72poGx_5ShZz9Goc8JYCGZTbZq-grU",
-    
-        authDomain: "cardiac-4d807.firebaseapp.com",
-    
-        databaseURL: "https://cardiac-4d807-default-rtdb.firebaseio.com",
-    
-        projectId: "cardiac-4d807",
-    
-        storageBucket: "cardiac-4d807.appspot.com",
-    
-        messagingSenderId: "706985819918",
-    
-        appId: "1:706985819918:web:64009f863a9556ce4be15f"
-    
-      };
-    
-    
-      // Initialize Firebase
-      const app = initializeApp(firebaseConfig);
-      var url = "https://webcourses.ucf.edu/login/oauth2/auth?";
-
-      import {getDatabase, ref, child, get} from "https://www.gstatic.com/firebasejs/10.8.1/firebase-database.js";
-
-      const db = getDatabase();
-
-      let state = '';
-      for (let i = 0; i < len; ++i) {
-        state += (Math.floor(Math.random() * 16)).toString(16);
-      }
-
-      console.log("state:",state);
-
-      get(child(ref(db), '/')).then((snapshot) => {
-        if (snapshot.exists()) {
-          var val = snapshot.val();
-
-          var client_id = val.client_id;
-          var redirect_uri = val.redirect_uri;
-          var response_type = val.response_type;
-
-          url = url+'client_id='+client_id+'&response_type='+response_type+'&redirect_uri='+redirect_uri+'&state='+state;
-          console.log("url:",url);
-
-          window.location.href = url;
-
-        } else {
-          console.log(snapshot);
-        }
-      }).catch((error) => {
-        console.error(error);
-      });
-    </script>
+    <script src=index.js type="module"></script>
   </body>
 </html>
