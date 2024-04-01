@@ -16,7 +16,7 @@
         "selection_width": 800,
         "placements": [
           {
-            "text": "Course Navigation Placement",
+            "text": "cARdiac VR",
             "icon_url": "https://cardiac-4d807.web.app/logo.jpg",
             "placement": "course_navigation",
             "message_type": "LtiResourceLinkRequest",
